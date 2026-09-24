@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://bartolialberto.github.io/WorkingNotes/Windows/Integrity%201/">
+        <link rel="canonical" href="https://bartolialberto.github.io/WorkingNotes/LLM/LLM%20and%20Cybersecurity/">
       
       
-        <link rel="prev" href="../Credential%20Storage/">
+        <link rel="prev" href="../LLM%20Performance/">
       
       
-        <link rel="next" href="../WinRM%20and%20PsExec/">
+        <link rel="next" href="../LLM%20vs%20AI%20Agents/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Windows Integrity Architecture - Working Notes</title>
+        <title>LLM and Cybersecurity - Working Notes</title>
       
     
     
@@ -83,11 +83,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#integrity-levels" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -119,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows Integrity Architecture
+              LLM and Cybersecurity
             
           </span>
         </div>
@@ -682,18 +677,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -714,7 +711,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -732,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/Coding/" class="md-nav__link">
+      <a href="../Coding/" class="md-nav__link">
         
   
   
@@ -760,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/LLM%20Internals/" class="md-nav__link">
+      <a href="../LLM%20Internals/" class="md-nav__link">
         
   
   
@@ -788,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/LLM%20Performance/" class="md-nav__link">
+      <a href="../LLM%20Performance/" class="md-nav__link">
         
   
   
@@ -813,10 +810,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../LLM/LLM%20and%20Cybersecurity/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -832,6 +836,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -844,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/LLM%20vs%20AI%20Agents/" class="md-nav__link">
+      <a href="../LLM%20vs%20AI%20Agents/" class="md-nav__link">
         
   
   
@@ -872,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/Training/" class="md-nav__link">
+      <a href="../Training/" class="md-nav__link">
         
   
   
@@ -900,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../LLM/Vulnerability/" class="md-nav__link">
+      <a href="../Vulnerability/" class="md-nav__link">
         
   
   
@@ -1070,20 +1075,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -1104,7 +1107,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1122,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Application%20Control/" class="md-nav__link">
+      <a href="../../Windows/Application%20Control/" class="md-nav__link">
         
   
   
@@ -1150,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Credential%20Storage/" class="md-nav__link">
+      <a href="../../Windows/Credential%20Storage/" class="md-nav__link">
         
   
   
@@ -1175,35 +1178,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Windows Integrity Architecture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Windows/Integrity%201/" class="md-nav__link">
         
   
   
@@ -1219,102 +1197,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#integrity-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity Levels
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrity Levels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#practical-example-web-browser-sandboxing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practical Example: Web Browser Sandboxing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrity-level-of-a-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity level of a process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrity level of a process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-standard-elevation-path-uac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Standard Elevation Path (UAC)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bypassing-immediate-uac-prompts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        "Bypassing" Immediate UAC Prompts
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run as Administrator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1327,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../WinRM%20and%20PsExec/" class="md-nav__link">
+      <a href="../../Windows/WinRM%20and%20PsExec/" class="md-nav__link">
         
   
   
@@ -1373,92 +1255,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#integrity-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity Levels
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrity Levels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#practical-example-web-browser-sandboxing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Practical Example: Web Browser Sandboxing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrity-level-of-a-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrity level of a process
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Integrity level of a process">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#the-standard-elevation-path-uac" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Standard Elevation Path (UAC)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bypassing-immediate-uac-prompts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        "Bypassing" Immediate UAC Prompts
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-as-administrator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run as Administrator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1474,60 +1270,8 @@
 
 
 
-<h1 id="windows-integrity-architecture">Windows Integrity Architecture</h1>
-<h2 id="integrity-levels">Integrity Levels</h2>
-<ul>
-<li>Windows' Integrity Levels implement a <strong>mandatory access control (MAC)</strong> policy, where access decisions are not at the discretion of the object owner but are enforced by the system based on predefined integrity levels. </li>
-<li>
-<p>Integrity Levels represent the <strong>attributed trustworthiness of an entity or object</strong>:</p>
-<ul>
-<li><strong>Low integrity</strong> (S-1-16-4096)  </li>
-<li><strong>Medium integrity</strong> (S-1-16-8192) 4 - Standard users typically receive this level. Objects without an integrity label are treated as medium integrity.  </li>
-<li><strong>High integrity</strong> (S-1-16-12288) 4 - Elevated users receive this level.  </li>
-<li><strong>System integrity</strong> (S-1-16-16384) 4 - System services typically receive this level.  </li>
-</ul>
-</li>
-<li>
-<p>Security subjects (such as users) and securable objects (such as files and processes) are assigned an integrity level. </p>
-</li>
-<li>When a write operation occurs, Windows first checks if the <strong>subject</strong>'s integrity level "dominates" the <strong>object</strong>'s integrity level. "Dominates" means the subject's integrity level is <strong>equal to or higher than</strong> the object's integrity level. If this condition is met, and the normal DACL check also succeeds, the write operation is granted.  </li>
-<li>This enforcement means that a subject can only write to objects at <strong>its same or lower integrity level</strong>, even if the object's DACL would otherwise allow write access. It helps prevent less trusted (lower integrity) processes from contaminating more trusted (higher integrity) data or processes.  </li>
-<li>The same restriction applies to reading. To read or write another process's memory, a thread must first obtain a handle to that process using the OpenProcess function. When a thread attempts to open a handle, the subject’s integrity level must usually dominate (be equal to or higher than) the object’s integrity level. </li>
-</ul>
-<h3 id="practical-example-web-browser-sandboxing">Practical Example: Web Browser Sandboxing</h3>
-<p>When you run a web browser (like Chrome or Edge) in "Protected Mode" or sandbox mode:</p>
-<ul>
-<li>The browser process runs at Low Integrity Level.</li>
-<li>Standard user files and registry keys are at Medium Integrity Level.</li>
-</ul>
-<p>If a web page exploits a browser vulnerability, the malicious code inherits the browser's Low IL.</p>
-<p>Because Windows blocks write-up attempts, the Low IL process is strictly forbidden from writing to Medium IL locations (like your Document folder) or High IL locations (like System32).</p>
-<h2 id="integrity-level-of-a-process">Integrity level of a process</h2>
-<ul>
-<li>Integrity levels are represented by <strong>integrity SIDs</strong> (Security Identifiers).  </li>
-<li>The integrity SID for a security subject (user) is stored in its access token. The integrity SID for a securable object (process, file) is stored in its System Access Control List (SACL) within an Access Control Entry. </li>
-<li>Processes created by a user inherit the <strong>minimum</strong> of the <strong>user</strong>'s integrity level and the <strong>executable file</strong>'s integrity level, ensuring they never run with higher integrity than the executable.</li>
-<li>Integrity levels are assigned at the time of <strong>process creation</strong> and remain <strong>static</strong> throughout the life of that process. If a process needs to perform tasks requiring a higher integrity level, it must typically launch a <strong>new process</strong> with an elevated token.</li>
-</ul>
-<h3 id="the-standard-elevation-path-uac">The Standard Elevation Path (UAC)</h3>
-<p>The most common way to achieve a higher integrity level is through <strong>User Account Control (UAC)</strong>.</p>
-<ul>
-<li>Developers mark an application's manifest with a <code>requestedExecutionLevel</code> of <code>requireAdministrator</code>.  </li>
-<li>When a standard user process calls the <code>ShellExecute</code> function to launch such a file, the system detects that elevation is required and the user is prompted for administrator credentials; if the user is an administrator, the user is prompted with a consent prompt.  </li>
-<li>Once approved, a new process is created which carries a High integrity level.</li>
-</ul>
-<h3 id="bypassing-immediate-uac-prompts">"Bypassing" Immediate UAC Prompts</h3>
-<p>While there isn't a simple "IncreaseIntegrityLevel" system call for an existing process, there are specific models and APIs used to perform higher-integrity tasks from a lower-integrity environment:</p>
-<ul>
-<li><strong>Administrator COM Object Model:</strong> An application can use the <strong>COM Elevation Moniker</strong> to create an elevated COM object. While this still triggers a UAC prompt, it allows a standard-user process to execute specific administrative methods via the elevated object.  </li>
-<li><strong>Operating System Service Model:</strong> A standard process can communicate with a service already running as <strong>SYSTEM</strong> (the highest integrity level) via <strong>Remote Procedure Call (RPC</strong>. Because the service is already running at a high privilege level, no elevation prompt is required for the communication itself.  </li>
-<li><strong>Elevated Task Model:</strong> An application can start a <strong>scheduled task</strong> that has been pre-configured to run as SYSTEM. If the task's security descriptor allows a standard user to start it, the process runs at a high integrity level without a UAC prompt at the time of execution.</li>
-</ul>
-<p>High-integrity processes may <strong>lower</strong> their own integrity level (e.g., for sandboxing) with the <code>SetTokenInformation</code>  API. This API does not allow a low-integrity process to "promote" itself.<br />
-The mandatory integrity label of an <strong>object</strong> (like a file or registry key) may be modified by a process with the <code>SeRelabelPrivilege</code> privilege. This privilege does not allow a process to unilaterally elevate its own process token integrity level; it is intended for managing the integrity requirements of securable resources.</p>
-<h3 id="run-as-administrator">Run as Administrator</h3>
-<p>The "run as administrator" functionality in Windows is implemented through User Account Control (UAC). When a user attempts to perform an action that requires administrative privileges, UAC triggers a consent prompt, which is also called an elevation prompt. This prompt notifies the user that a change is about to occur, and it asks for permission to proceed.</p>
-<p>An alternative to the "run as administrator" option is <strong>sudo for Windows</strong>, which provides a way to elevate a command as an administrator from the command line.Sudo uses the UAC security feature for elevation, and it does not support running programs as other users.</p>
+<h1 id="llm-and-cybersecurity">LLM and Cybersecurity</h1>
+<p>See <a href="../../Cybersecurity/AI%20in%20cybersec/">AI in cybersec</a>.</p>
 
 
 
