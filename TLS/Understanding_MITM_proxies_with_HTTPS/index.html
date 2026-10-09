@@ -1494,7 +1494,7 @@
 <p>Notice that these considerations are independent of the nature of the proxy, i.e. whether it is legitimate or evil.</p>
 <h3 id="tls-inspection">TLS inspection</h3>
 <p>If the proxy does not perform TLS inspection, which is very common, then the proxy moves bytes back and forth between the two TCP connections, the one browser-proxy and the other proxy-web server. TLS establishment occurs between browser and web server. The resulting message exchange is summarized below, assuming the two TCP connections are already open (In most cases the proxy has learnt the association between the two connections by the HTTP CONNECT message previously sent by the browser. If this message was not sent, because the browser is not configured to use a proxy, then the proxy may learn the association with the first TLS message, as this message specifies the name of the web server).</p>
-<p><img alt="img.png" src="../img.png" /></p>
+<p><img alt="../LLM/img.png" src="../../LLM/img.png" /></p>
 <p>(the Verify step includes the check CERT-srv.subject = “server.org”)</p>
 <p>If the proxy performs TLS inspection, then there are two cases:</p>
 <ol>
@@ -1505,7 +1505,7 @@
 <p>In practice, case 1 may occur for only a few of the web servers contacted by the browser---the set of certificates already available at the proxy is typically small. In those scenarios, the proxy will alternate between the two behaviors (TLS inspection vs TLS not inspection) depending on the web server name.</p>
 <p>Proxies able to support case 2 may also alternate between the two scenarios: they may work mostly in not inspection and activate inspection only on certain web server names, or they may work mostly in inspection and deactivate inspection only on certain web server names. The former could be typical of an evil proxy (interested only in certain web servers), the latter of a legitimate proxy (willing to preserve privacy of users on certain web servers as specified by the enterprise policy).</p>
 <p>HTTPS decryption with keypair and certificate already available to the proxy (denoted as CERT-srv-x) is summarized below. The proxy may or may not maintain another HTTPS conversation with the Web server and may or may not use content provided by the web server in responses for the browser. The interaction proxy-web server is irrelevant from our point of view and not shown for ease of description.</p>
-<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p><img alt="../LLM/img_1.png" src="../../LLM/img_1.png" /></p>
 <p>HTTPS decryption with keypair and certificate generated on-the-fly (denoted as CERT-srv-x) is summarized below. Actions identical to the previous case are indicated with gray font for clarity. The interaction proxy-web server is not shown for the same reasons as above.</p>
 <p><img alt="img_2.png" src="../img_2.png" /></p>
 <h2 id="significant-scenarios">Significant scenarios</h2>
