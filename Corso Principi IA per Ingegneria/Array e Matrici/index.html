@@ -492,6 +492,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#esempio-rete-neurale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: rete neurale
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1509,6 +1520,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#esempio-rete-neurale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esempio: rete neurale
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1559,7 +1581,7 @@
 <p>Consideriamo una matrice $\mathbf{A}$ con $r$ righe e $c$ colonne.</p>
 <ul>
 <li>Un <strong>dataset</strong> composto da $r$ istanze <em>già risolte</em> di un problema. Ogni riga rappresenta un'istanza; le "prime" colonne sono l'input, le restanti colonne sono l'output. Il numero di colonne di input ed il numero di colonne di output è lo stesso in tutte le istanze. </li>
-<li>I <strong>pesi</strong> di una parte di una rete neurale, in cui entra un array con $c$ elementi ed esce un array con $r$ elementi.</li>
+<li>I <strong>pesi</strong> di una parte di una rete neurale, in cui entra un array con $c$ elementi ed esce un array con $r$ elementi. </li>
 </ul>
 <p>Dopo avere visto il "prodotto matrice vettore" più sotto, si può capire che $\mathbf{A}$ può rappresentare anche:</p>
 <ul>
@@ -1625,6 +1647,13 @@ $$</p>
 <p>$$
 \langle \mathbf{v}, \mathbf{w} \rangle = \mathbf{v}^\top \mathbf{w} = v_1 w_1 + v_2 w_2 + \cdots + v_n w_n = \sum_{k=1}^{n} v_k w_k
 $$</p>
+<h2 id="esempio-rete-neurale">Esempio: rete neurale</h2>
+<p><img alt="img.png" src="../img.png" /></p>
+<p>La riga 1 di $\mathbf{W}$ contiene i pesi con cui il vettore di input arriva all'ingresso del neurone 1; la riga 2 contiene i pesi con cui il vettore di input arriva all'ingresso del neurone 2, e così via.</p>
+<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p>La riga 1 di $\mathbf{U}$ contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra arriva all'ingresso del neurone 1 sulla destra; la riga 2 contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra arriva all'ingresso del neurone 2 sulla destra, e così via.</p>
+<p><img alt="img_2.png" src="../img_2.png" /></p>
+<p>Ognuno dei neuroni sulla destra applica una funzione non lineare $\sigma(\ldots)$ al proprio input (la stessa funzione per ogni neurone). L'input di un neurone è quello indicato nel disegno: il neurone 1 ha come input il prodotto tra il vettore $\mathbf{x}$ e la riga 1 della matrice dei pesi $\mathbf{W}$; il neurone 2 ha come input il prodotto tra $\mathbf{x}$ e la riga 2 di $\mathbf{W}$, e così via.</p>
 
 
 
