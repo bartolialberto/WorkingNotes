@@ -501,6 +501,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Esempio: rete neurale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuizione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spiegazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spiegazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1529,6 +1557,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Esempio: rete neurale">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#intuizione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuizione
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spiegazione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Spiegazione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1558,7 +1614,7 @@
 <ul>
 <li>Nella notazione scritta ci sono convenzioni per differenziare un array da un numero. Ad esempio, $\mathbf{a}$, $\underline{a}$, $\vec{a}$ sono modi diversi per indicare un array; $a_k$, $a[k]$ sono modi diversi per elencare il $k$-esimo elemento dell'array.</li>
 <li>Queste convenzioni spesso si danno per scontate senza renderle esplicite. Occorre capirle dal contesto.  </li>
-<li>Spesso il numero di elementi (<em>dimensione</em> dell'array) non è scritto esplicitamente. Occorre capire anche questo dal contesto.</li>
+<li>La notazione $\mathbf{a} \in \mathbb{R}^n$ significa che il vettore $\mathbf{a}$ ha $n$ elementi, è cioè di <em>dimensione</em> $n$. Spesso la dimensione di un array non è scritta esplicitamente e deve essere dedotta dal contesto.</li>
 </ul>
 <h4 id="cosa-rappresenta-per-noi">Cosa rappresenta per noi</h4>
 <p>Consideriamo un array $\mathbf{a}$ con $n$ elementi.</p>
@@ -1581,12 +1637,12 @@
 <p>Consideriamo una matrice $\mathbf{A}$ con $r$ righe e $c$ colonne.</p>
 <ul>
 <li>Un <strong>dataset</strong> composto da $r$ istanze <em>già risolte</em> di un problema. Ogni riga rappresenta un'istanza; le "prime" colonne sono l'input, le restanti colonne sono l'output. Il numero di colonne di input ed il numero di colonne di output è lo stesso in tutte le istanze. </li>
-<li>I <strong>pesi</strong> di una parte di una rete neurale, in cui entra un array con $c$ elementi ed esce un array con $r$ elementi. </li>
+<li>I <strong>pesi</strong> di una parte di una rete neurale, in cui entra un array con $c$ elementi ed esce un array con $r$ elementi (per memorizzare: "la dimensione di uscita è il numero di righe").</li>
 </ul>
-<p>Dopo avere visto il "prodotto matrice vettore" più sotto, si può capire che $\mathbf{A}$ può rappresentare anche:</p>
+<p>Dopo avere visto il <a href="#prodotto-matrice-vettore">Prodotto matrice vettore</a> più sotto, si può capire che $\mathbf{A}$ può rappresentare anche:</p>
 <ul>
-<li>Una <strong>trasformazione lineare</strong> dallo spazio con $c$ dimensioni allo spazio con $r$ dimensioni. Ogni punto dello spazio a $r$ dimensioni è cioè "mappato" su un punto dello spazio a $c$ dimensioni. Il punto $\mathbf{v_{IN}}$ è cioè "mappato" sul punto $\mathbf{v_{OUT}}=\mathbf{A}\mathbf{v_{IN}}$ in questo modo: la prima coordinata del punto di arrivo $\mathbf{v_{OUT}}$ è una combinazione lineare di tutte le coordinate del punto di partenza $\mathbf{v_{IN}}$, in cui i coefficienti sono i numeri nella prima riga della matrice. La seconda coordinata del punto di arrivo...numeri nella seconda riga della matrice, e così via.</li>
-<li>Caso particolare del precedente. Per i punti nello spazio di partenza con coordinate <em>one-hot</em> (una coordinata 1, tutte le altre 0), il punto di arrivo è una colonna della matrice. La prima colonna è il punto di arrivo del punto di partenza con prima coordinata 1; la seconda colonna è il punto di arrivo del punto di partenza con seconda coordinata 1; e così via. Basta notare che se si moltiplica un vettore one-hot una matrice, il risultato è la colonna della matrice che "corrisponde all'1 nel vettore".</li>
+<li>Una <strong>trasformazione lineare</strong> dallo spazio con $c$ dimensioni allo spazio con $r$ dimensioni. Ogni punto dello spazio a $r$ dimensioni è cioè "mappato" su un punto dello spazio a $c$ dimensioni. In dettaglio, il punto di partenza $\mathbf{v_{IN}}$ è "mappato" sul punto di arrivo $\mathbf{v_{OUT}}=\mathbf{A}\mathbf{v_{IN}}$ in questo modo: la prima coordinata di $\mathbf{v_{OUT}}$ è una combinazione lineare di tutte le coordinate di $\mathbf{v_{IN}}$, in cui i coefficienti sono i numeri nella prima riga della matrice. La seconda coordinata di di $\mathbf{v_{OUT}}$...numeri nella seconda riga della matrice, e così via.</li>
+<li>Caso particolare del precedente. Per i punti nello spazio di partenza con <strong>coordinate <em>one-hot</em></strong> (una coordinata 1, tutte le altre 0), il punto di arrivo è una colonna della matrice. La prima colonna è il punto di arrivo del punto di partenza con prima coordinata 1; la seconda colonna è il punto di arrivo del punto di partenza con seconda coordinata 1; e così via. Basta notare che se si moltiplica un vettore one-hot una matrice, il risultato è la colonna della matrice che "corrisponde all'1 nel vettore".</li>
 </ul>
 <h2 id="operazioni">Operazioni</h2>
 <p>L'<em>operazione</em> somma tra numeri reali produce un numero reale. L'operazione somma tra un numero ed un insieme di numeri non ha senso (semplifico molto). In ogni operazione è indispensable capire il tipo degli oggetti che entrano ed il tipo dell'oggetto che esce. Qui sotto le operazioni che ci servono.</p>
@@ -1634,6 +1690,32 @@ $$</p>
     \sum_{k=1}^{c} a_{rk} v_k
 \end{pmatrix}
 $$</p>
+<p>Caso particolare: vettore one-hot. Il punto di arrivo del punto di partenza con la sola $j$-esima coordinata che vale 1 è la $j$-esima colonna della matrice.</p>
+<p>$$
+\mathbf{A}\mathbf{v} =
+\begin{pmatrix}
+    a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1c} \\
+    a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2c} \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    a_{r1} &amp; a_{r2} &amp; \cdots &amp; a_{rc}
+\end{pmatrix}
+\begin{pmatrix}
+    0 \\ \vdots \\ 1 \\ \vdots \\ 0
+\end{pmatrix}
+\leftarrow j
+$$</p>
+<p>$$
+\begin{pmatrix}
+    a_{11} \cdot 0 + \cdots + a_{1j} \cdot 1 + \cdots + a_{1c} \cdot 0 \\
+    a_{21} \cdot 0 + \cdots + a_{2j} \cdot 1 + \cdots + a_{2c} \cdot 0 \\
+    \vdots \\
+    a_{r1} \cdot 0 + \cdots + a_{rj} \cdot 1 + \cdots + a_{rc} \cdot 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+    a_{1j} \\ a_{2j} \\ \vdots \\ a_{rj}
+\end{pmatrix}
+$$</p>
 <h3 id="prodotto-scalare">Prodotto Scalare</h3>
 <ul>
 <li>Entra: Array $\mathbf{v}$ ed array $\mathbf{w}$ <em>con lo stesso numero di elementi</em>.</li>
@@ -1648,12 +1730,109 @@ $$</p>
 \langle \mathbf{v}, \mathbf{w} \rangle = \mathbf{v}^\top \mathbf{w} = v_1 w_1 + v_2 w_2 + \cdots + v_n w_n = \sum_{k=1}^{n} v_k w_k
 $$</p>
 <h2 id="esempio-rete-neurale">Esempio: rete neurale</h2>
-<p><img alt="img.png" src="../img.png" /></p>
-<p>La riga 1 di $\mathbf{W}$ contiene i pesi con cui il vettore di input arriva all'ingresso del neurone 1; la riga 2 contiene i pesi con cui il vettore di input arriva all'ingresso del neurone 2, e così via.</p>
-<p><img alt="img_1.png" src="../img_1.png" /></p>
-<p>La riga 1 di $\mathbf{U}$ contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra arriva all'ingresso del neurone 1 sulla destra; la riga 2 contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra arriva all'ingresso del neurone 2 sulla destra, e così via.</p>
+<h3 id="intuizione">Intuizione</h3>
+<p>Consideriamo una rete neurale feed-forward. Primo strato definito dalla matrice $\mathbf{W}$ con 8 righe e 6 colonne, secondo strato definito dalla matrice $\mathbf{U}$ con 4 righe e 8 colonne. Funzione di attivazione dei neuroni indicata con $\sigma(\ldots)$.</p>
 <p><img alt="img_2.png" src="../img_2.png" /></p>
-<p>Ognuno dei neuroni sulla destra applica una funzione non lineare $\sigma(\ldots)$ al proprio input (la stessa funzione per ogni neurone). L'input di un neurone è quello indicato nel disegno: il neurone 1 ha come input il prodotto tra il vettore $\mathbf{x}$ e la riga 1 della matrice dei pesi $\mathbf{W}$; il neurone 2 ha come input il prodotto tra $\mathbf{x}$ e la riga 2 di $\mathbf{W}$, e così via.</p>
+<p>Il calcolo effettuato dalla rete neurale si può scrivere in maniera molto sintetica: $\sigma(\mathbf{U}\, \sigma(\mathbf{W}\mathbf{x}))$.</p>
+<p>Cosa accade, intuitivamente:</p>
+<ol>
+<li>Al vettore di input $\mathbf{x}$ viene applicata una trasformazione non lineare $\sigma(\mathbf{W}(\ldots))$, definita dai pesi della matrice $\mathbf{W}$ e dalla funzione di attivazione dei neuroni. </li>
+<li>Al vettore così ottenuto viene applicata un'altra trasformazione non lineare $\sigma(\mathbf{U}(\ldots))$, definita dai pesi della matrice $\mathbf{U}$ e dalla funzione di attivazione dei neuroni.</li>
+</ol>
+<p>Altro punto di vista intuitivo:</p>
+<ol>
+<li>Il punto di input $\mathbf{x}$ è mappato in modo non lineare in uno spazio con un numero di dimensioni uguale al numero di righe di $\mathbf{W}$. </li>
+<li>Il punto così ottenuto è mappato in modo non lineare in uno spazio con  con un numero di dimensioni uguale al numero di righe di $\mathbf{U}$.</li>
+</ol>
+<h3 id="spiegazione">Spiegazione</h3>
+<p><img alt="img.png" src="../img.png" /></p>
+<p>La riga 1 di $\mathbf{W}$ contiene i pesi con cui il vettore $\mathbf{x}$ di input arriva all'ingresso del neurone 1; la riga 2 contiene i pesi con cui il vettore di input arriva all'ingresso del neurone 2, e così via. L'<em>ingresso</em> dei neuroni è quindi il seguente:</p>
+<p>$$
+\mathbf{W}\mathbf{x} =
+\begin{pmatrix}
+    w_{11} &amp; w_{12} &amp; \cdots &amp; w_{18} \\
+    w_{21} &amp; w_{22} &amp; \cdots &amp; w_{28} \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    w_{61} &amp; w_{62} &amp; \cdots &amp; w_{68}
+\end{pmatrix}
+\begin{pmatrix}
+    x_1 \\ x_2 \\ \vdots \\ x_8
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \sum_{k=1}^{8} w_{1k} x_k \\
+    \sum_{k=1}^{8} w_{2k} x_k \\
+    \vdots \\
+    \sum_{k=1}^{8} w_{6k} x_k
+\end{pmatrix}
+\in \mathbb{R}^6
+$$</p>
+<p>Ogni neurone applica una funzione lineare (la stessa per ogni neurone) che indichiamo con $\sigma(\ldots)$. L'<em>uscita</em> dei neuroni sarà quindi:</p>
+<p>$$
+\begin{pmatrix}
+    \sigma\left(\sum_{k=1}^{8} w_{1k} x_k\right) \\
+    \sigma\left(\sum_{k=1}^{8} w_{2k} x_k\right) \\
+    \vdots \\
+    \sigma\left(\sum_{k=1}^{8} w_{6k} x_k\right)
+\end{pmatrix}
+= \sigma(\mathbf{W}\mathbf{x})
+$$</p>
+<p>Lo step successivo è analogo, con pesi diversi:</p>
+<p><img alt="img_1.png" src="../img_1.png" /></p>
+<p>La riga 1 di $\mathbf{U}$ contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra (cioè $\sigma(\mathbf{W}\mathbf{x})$) arriva all'ingresso del neurone 1 sulla destra; la riga 2 contiene i pesi con cui il vettore prodotto dai neuroni sulla sinistra arriva all'ingresso del neurone 2 sulla destra, e così via. L'<em>ingresso</em> dei neuroni dello strato finale sarà quindi:</p>
+<p>$$
+\mathbf{U}\, \sigma(\mathbf{W}\mathbf{x}) =
+\begin{pmatrix}
+    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
+    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
+    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
+    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+\end{pmatrix}
+\begin{pmatrix}
+    \sigma\left(\sum_{k=1}^{8} w_{1k} x_k\right) \\
+    \sigma\left(\sum_{k=1}^{8} w_{2k} x_k\right) \\
+    \vdots \\
+    \sigma\left(\sum_{k=1}^{8} w_{6k} x_k\right)
+\end{pmatrix}
+\in \mathbb{R}^4
+$$</p>
+<p>Se chiamiamo $\mathbf{z}$ l'uscita dei neuroni del primo strato (cioè $\sigma(\mathbf{W}\mathbf{x})$) allora la formula è più semplice da comprendere. Questo è l'ingresso dei neuroni dello strato finale:</p>
+<p>$$
+\mathbf{U}\, \mathbf{z} =
+\begin{pmatrix}
+    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
+    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
+    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
+    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+\end{pmatrix}
+\begin{pmatrix}
+    z_1 \\ z_2 \\ \vdots \\ z_6
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \sum_{k=1}^{6} u_{1k} z_k \\
+    \sum_{k=1}^{6} u_{2k} z_k \\
+    \sum_{k=1}^{6} u_{3k} z_k \\
+    \sum_{k=1}^{6} u_{4k} z_k
+\end{pmatrix}
+\in \mathbb{R}^4
+$$</p>
+<p>e questa è l'<em>uscita</em> dello strato finale:</p>
+<p>$$
+\sigma(\mathbf{U}\, \mathbf{z}) =
+\sigma\left(
+\begin{pmatrix}
+    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
+    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
+    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
+    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+\end{pmatrix}
+\begin{pmatrix}
+    z_1 \\ z_2 \\ \vdots \\ z_6
+\end{pmatrix}
+\right)
+\in \mathbb{R}^4
+$$</p>
 
 
 
