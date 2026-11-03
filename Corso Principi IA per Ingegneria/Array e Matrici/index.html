@@ -526,6 +526,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#come-sono-scelti-i-pesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come sono scelti i pesi
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1582,6 +1593,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#come-sono-scelti-i-pesi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Come sono scelti i pesi
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1833,6 +1855,21 @@ $$</p>
 \right)
 \in \mathbb{R}^4
 $$</p>
+<h3 id="come-sono-scelti-i-pesi">Come sono scelti i pesi</h3>
+<p>I valori degli elementi delle matrici (<em>pesi</em>) sono determinati nella fase di <em>training</em>.</p>
+<p>I pesi sono scelti automaticamente in modo che la rete neurale abbia <em>"il comportamento desiderato sul dataset"</em> (frase molto intuitiva e molto, molto inaccurata).</p>
+<p>Più in dettaglio, la fase di training richiede:</p>
+<ol>
+<li>Un dataset con molte coppie <input, output desiderato></li>
+<li>Un algoritmo in grado di scegliere i pesi in modo che l'errore medio sul dataset sia molto piccolo (frase molto intuitiva e molto, molto inaccurata).</li>
+</ol>
+<p>L'algoritmo normalmente usato si basa sul procedimento cosiddetto <em>backpropagation</em> (discusso sinteticamente nelle slide e nelle lezioni):</p>
+<ul>
+<li>Inizialmente i pesi sono scelti in modo random.</li>
+<li>Si applica ogni esempio del dataset alla rete neurale e se ne calcola l'errore medio su tutto il dataset.</li>
+<li>Si modifica leggermente ogni peso in modo da minimizzare l'errore medio (la parte complicata è determinare il valore assoluto e la direzione della piccola modifica da apportare ad ogni peso; ciò richiede il calcolo della derivata dell'errore medio rispetto ad ogni peso, sul valore attuale di quel peso).</li>
+<li>Si ripetono i due step precedenti fino a quando l'errore medio rimane immutato per un numero di iterazioni predeterminato, oppure le risorse di calcolo allocate sono terminate.</li>
+</ul>
 
 
 
