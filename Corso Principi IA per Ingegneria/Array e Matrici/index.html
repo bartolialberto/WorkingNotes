@@ -1661,11 +1661,9 @@
 <li>Un <strong>dataset</strong> composto da $r$ istanze <em>già risolte</em> di un problema. Ogni riga rappresenta un'istanza; le "prime" colonne sono l'input, le restanti colonne sono l'output. Il numero di colonne di input ed il numero di colonne di output è lo stesso in tutte le istanze. </li>
 <li>I <strong>pesi</strong> di una parte di una rete neurale, in cui entra un array con $c$ elementi ed esce un array con $r$ elementi (per memorizzare: "la dimensione di uscita è il numero di righe").</li>
 </ul>
-<p>Dopo avere visto il <a href="#prodotto-matrice-vettore">Prodotto matrice vettore</a> più sotto, si può capire che $\mathbf{A}$ può rappresentare anche:</p>
-<ul>
-<li>Una <strong>trasformazione lineare</strong> dallo spazio con $c$ dimensioni allo spazio con $r$ dimensioni. Ogni punto dello spazio a $r$ dimensioni è cioè "mappato" su un punto dello spazio a $c$ dimensioni. In dettaglio, il punto di partenza $\mathbf{v_{IN}}$ è "mappato" sul punto di arrivo $\mathbf{v_{OUT}}=\mathbf{A}\mathbf{v_{IN}}$ in questo modo: la prima coordinata di $\mathbf{v_{OUT}}$ è una combinazione lineare di tutte le coordinate di $\mathbf{v_{IN}}$, in cui i coefficienti sono i numeri nella prima riga della matrice. La seconda coordinata di di $\mathbf{v_{OUT}}$...numeri nella seconda riga della matrice, e così via.</li>
-<li>Caso particolare del precedente. Per i punti nello spazio di partenza con <strong>coordinate <em>one-hot</em></strong> (una coordinata 1, tutte le altre 0), il punto di arrivo è una colonna della matrice. La prima colonna è il punto di arrivo del punto di partenza con prima coordinata 1; la seconda colonna è il punto di arrivo del punto di partenza con seconda coordinata 1; e così via. Basta notare che se si moltiplica un vettore one-hot una matrice, il risultato è la colonna della matrice che "corrisponde all'1 nel vettore".</li>
-</ul>
+<p>Ad esempio, nella rete neurale schematizzata qui sotto, i pesi della parte sinistra sono in una matrice con 8 righe e 6 colonne; i pesi della parte destra sono in una matrice con 4 righe ed 8 colonne.</p>
+<p><img alt="img_2.png" src="../img_2.png" /></p>
+<p>Nella sezione sul <a href="#prodotto-matrice-vettore">Prodotto matrice vettore</a> più sotto, si vedrà che $\mathbf{A}$ può rappresentare anche una <em>trasformazione lineare</em> tra lo spazio a $c$ dimensioni e lo spazio ad $r$ dimensioni.</p>
 <h2 id="operazioni">Operazioni</h2>
 <p>L'<em>operazione</em> somma tra numeri reali produce un numero reale. L'operazione somma tra un numero ed un insieme di numeri non ha senso (semplifico molto). In ogni operazione è indispensable capire il tipo degli oggetti che entrano ed il tipo dell'oggetto che esce. Qui sotto le operazioni che ci servono.</p>
 <h3 id="prodotto-vettore-riga-vettore">Prodotto Vettore Riga-Vettore</h3>
@@ -1712,7 +1710,7 @@ $$</p>
     \sum_{k=1}^{c} a_{rk} v_k
 \end{pmatrix}
 $$</p>
-<p>Caso particolare: vettore one-hot. Il punto di arrivo del punto di partenza con la sola $j$-esima coordinata che vale 1 è la $j$-esima colonna della matrice.</p>
+<p>Caso particolare: <strong>vettore one-hot</strong> (una coordinata 1, tutte le altre 0). Il punto di arrivo del punto di partenza con la sola $j$-esima coordinata che vale 1 è la $j$-esima colonna della matrice.</p>
 <p>$$
 \mathbf{A}\mathbf{v} =
 \begin{pmatrix}
@@ -1738,6 +1736,12 @@ $$</p>
     a_{1j} \\ a_{2j} \\ \vdots \\ a_{rj}
 \end{pmatrix}
 $$</p>
+<h4 id="cosa-rappresenta-una-matrice">Cosa rappresenta una matrice</h4>
+<p>Oltre a quanto visto più <a href="#matrice">sopra</a> (dataset, pesi di una rete neurale), può rappresentare: </p>
+<ul>
+<li>Una <strong>trasformazione lineare</strong> dallo spazio con $c$ dimensioni allo spazio con $r$ dimensioni. Ogni punto dello spazio a $r$ dimensioni è cioè "mappato" su un punto dello spazio a $c$ dimensioni. In dettaglio, il punto di partenza $\mathbf{v_{IN}}$ è "mappato" sul punto di arrivo $\mathbf{v_{OUT}}=\mathbf{A}\mathbf{v_{IN}}$ in questo modo: la prima coordinata di $\mathbf{v_{OUT}}$ è una combinazione lineare di tutte le coordinate di $\mathbf{v_{IN}}$, in cui i coefficienti sono i numeri nella prima riga della matrice. La seconda coordinata di di $\mathbf{v_{OUT}}$...numeri nella seconda riga della matrice, e così via.</li>
+<li>Caso particolare del precedente. Per i punti nello spazio di partenza con <strong>coordinate <em>one-hot</em></strong> (una coordinata 1, tutte le altre 0), il punto di arrivo è una colonna della matrice. La prima colonna è il punto di arrivo del punto di partenza con prima coordinata 1; la seconda colonna è il punto di arrivo del punto di partenza con seconda coordinata 1; e così via. Basta notare che se si moltiplica un vettore one-hot una matrice, il risultato è la colonna della matrice che "corrisponde all'1 nel vettore".</li>
+</ul>
 <h3 id="prodotto-scalare">Prodotto Scalare</h3>
 <ul>
 <li>Entra: Array $\mathbf{v}$ ed array $\mathbf{w}$ <em>con lo stesso numero di elementi</em>.</li>
@@ -1753,9 +1757,13 @@ $$</p>
 $$</p>
 <h2 id="esempio-rete-neurale">Esempio: rete neurale</h2>
 <h3 id="intuizione">Intuizione</h3>
-<p>Consideriamo una rete neurale feed-forward. Primo strato definito dalla matrice $\mathbf{W}$ con 8 righe e 6 colonne, secondo strato definito dalla matrice $\mathbf{U}$ con 4 righe e 8 colonne. Funzione di attivazione dei neuroni indicata con $\sigma(\ldots)$.</p>
+<p>Consideriamo una rete neurale feed-forward. Primo strato definito dalla matrice $\mathbf{W}$ con 8 righe e 6 colonne; secondo strato definito dalla matrice $\mathbf{U}$ con 4 righe e 8 colonne;funzione di attivazione dei neuroni indicata con $\sigma(\ldots)$.</p>
 <p><img alt="img_2.png" src="../img_2.png" /></p>
-<p>Il calcolo effettuato dalla rete neurale si può scrivere in maniera molto sintetica: $\sigma(\mathbf{U}\, \sigma(\mathbf{W}\mathbf{x}))$.</p>
+<p>Calcolo effettuato dalla rete neurale:</p>
+<ul>
+<li>Si può scrivere in maniera molto sintetica: $\sigma(\mathbf{U}\, \sigma(\mathbf{W}\mathbf{x}))$, dove $\mathbf{x}$ è il vettore di input.</li>
+<li>Si può descrivere in maniera intuitiva: il punto $\mathbf{x}$ ad 8 dimensioni è mappato in modo non lineare in un punto di uno spazio con 4 dimensioni.</li>
+</ul>
 <p>Cosa accade, intuitivamente:</p>
 <ol>
 <li>Al vettore di input $\mathbf{x}$ viene applicata una trasformazione non lineare $\sigma(\mathbf{W}(\ldots))$, definita dai pesi della matrice $\mathbf{W}$ e dalla funzione di attivazione dei neuroni. </li>
@@ -1787,7 +1795,6 @@ $$</p>
     \vdots \\
     \sum_{k=1}^{8} w_{6k} x_k
 \end{pmatrix}
-\in \mathbb{R}^6
 $$</p>
 <p>Ogni neurone applica una funzione lineare (la stessa per ogni neurone) che indichiamo con $\sigma(\ldots)$. L'<em>uscita</em> dei neuroni sarà quindi:</p>
 <p>$$
@@ -1797,7 +1804,7 @@ $$</p>
     \vdots \\
     \sigma\left(\sum_{k=1}^{8} w_{6k} x_k\right)
 \end{pmatrix}
-= \sigma(\mathbf{W}\mathbf{x})
+= \sigma(\mathbf{W}\mathbf{x}) \in \mathbb{R}^6
 $$</p>
 <p>Lo step successivo è analogo, con pesi diversi:</p>
 <p><img alt="img_1.png" src="../img_1.png" /></p>
@@ -1805,54 +1812,50 @@ $$</p>
 <p>$$
 \mathbf{U}\, \sigma(\mathbf{W}\mathbf{x}) =
 \begin{pmatrix}
-    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
-    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
-    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
-    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{18} \\
+    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{28} \\
+    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{38} \\
+    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{48}
 \end{pmatrix}
 \begin{pmatrix}
     \sigma\left(\sum_{k=1}^{8} w_{1k} x_k\right) \\
     \sigma\left(\sum_{k=1}^{8} w_{2k} x_k\right) \\
     \vdots \\
-    \sigma\left(\sum_{k=1}^{8} w_{6k} x_k\right)
+    \sigma\left(\sum_{k=1}^{8} w_{8k} x_k\right)
 \end{pmatrix}
-\in \mathbb{R}^4
 $$</p>
 <p>Se chiamiamo $\mathbf{z}$ l'uscita dei neuroni del primo strato (cioè $\sigma(\mathbf{W}\mathbf{x})$) allora la formula è più semplice da comprendere. Questo è l'ingresso dei neuroni dello strato finale:</p>
 <p>$$
 \mathbf{U}\, \mathbf{z} =
 \begin{pmatrix}
-    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
-    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
-    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
-    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{18} \\
+    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{28} \\
+    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{38} \\
+    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{48}
 \end{pmatrix}
 \begin{pmatrix}
-    z_1 \\ z_2 \\ \vdots \\ z_6
+    z_1 \\ z_2 \\ \vdots \\ z_8
 \end{pmatrix}
-=
+$$</p>
+<p>cioè:</p>
+<p>$$
+\mathbf{U}\, \mathbf{z} =
 \begin{pmatrix}
-    \sum_{k=1}^{6} u_{1k} z_k \\
-    \sum_{k=1}^{6} u_{2k} z_k \\
-    \sum_{k=1}^{6} u_{3k} z_k \\
-    \sum_{k=1}^{6} u_{4k} z_k
+    \sum_{k=1}^{8} u_{1k} z_k \\
+    \sum_{k=1}^{8} u_{2k} z_k \\
+    \sum_{k=1}^{8} u_{3k} z_k \\
+    \sum_{k=1}^{8} u_{4k} z_k
 \end{pmatrix}
-\in \mathbb{R}^4
 $$</p>
 <p>e questa è l'<em>uscita</em> dello strato finale:</p>
 <p>$$
-\sigma(\mathbf{U}\, \mathbf{z}) =
-\sigma\left(
 \begin{pmatrix}
-    u_{11} &amp; u_{12} &amp; \cdots &amp; u_{16} \\
-    u_{21} &amp; u_{22} &amp; \cdots &amp; u_{26} \\
-    u_{31} &amp; u_{32} &amp; \cdots &amp; u_{36} \\
-    u_{41} &amp; u_{42} &amp; \cdots &amp; u_{46}
+    \sigma\left(\sum_{k=1}^{8} u_{1k} z_k\right) \\
+    \sigma\left(\sum_{k=1}^{8} u_{2k} z_k\right) \\
+    \sigma\left(\sum_{k=1}^{8} u_{3k} z_k\right) \\
+    \sigma\left(\sum_{k=1}^{8} u_{4k} z_k\right)
 \end{pmatrix}
-\begin{pmatrix}
-    z_1 \\ z_2 \\ \vdots \\ z_6
-\end{pmatrix}
-\right)
+= \sigma(\mathbf{U}\, \mathbf{z})
 \in \mathbb{R}^4
 $$</p>
 <h3 id="come-sono-scelti-i-pesi">Come sono scelti i pesi</h3>
@@ -1864,12 +1867,13 @@ $$</p>
 <li>Un algoritmo in grado di scegliere i pesi in modo che l'errore medio sul dataset sia molto piccolo (frase molto intuitiva e molto, molto inaccurata).</li>
 </ol>
 <p>L'algoritmo normalmente usato si basa sul procedimento cosiddetto <em>backpropagation</em> (discusso sinteticamente nelle slide e nelle lezioni):</p>
-<ul>
+<ol>
 <li>Inizialmente i pesi sono scelti in modo random.</li>
-<li>Si applica ogni esempio del dataset alla rete neurale e se ne calcola l'errore medio su tutto il dataset.</li>
+<li>Si applica ogni esempio del dataset alla rete neurale e si calcola l'errore su ogni esempio</li>
+<li>Si calcola l'errore medio su tutto il dataset.</li>
 <li>Si modifica leggermente ogni peso in modo da minimizzare l'errore medio (la parte complicata è determinare il valore assoluto e la direzione della piccola modifica da apportare ad ogni peso; ciò richiede il calcolo della derivata dell'errore medio rispetto ad ogni peso, sul valore attuale di quel peso).</li>
-<li>Si ripetono i due step precedenti fino a quando l'errore medio rimane immutato per un numero di iterazioni predeterminato, oppure le risorse di calcolo allocate sono terminate.</li>
-</ul>
+<li>Si ripetono gli step 2-4 fino a quando l'errore medio sul dataset rimane immutato per un numero di iterazioni predeterminato, oppure le risorse di calcolo allocate sono terminate.</li>
+</ol>
 
 
 
